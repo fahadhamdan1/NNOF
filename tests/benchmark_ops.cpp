@@ -86,7 +86,7 @@ void benchmark_add_cpu(int size) {
     std::cout << "    Latency improvement: " << latency_improvement << "%" << std::endl;
     std::cout << "  Optimized Throughput: " << result_optimized.throughput << " ops/s" << std::endl;
     std::cout << "    Throughput improvement: " << throughput_improvement << "%" << std::endl;
-    std::cout << "  Optimized Memory usage: " << result_optimized.memory_usage << " bytes" << std::endl;
+    std::cout << "  Memory usage after optimized: " << result_optimized.memory_usage << " bytes" << std::endl;
     std::cout << std::endl;
 
 }
