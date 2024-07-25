@@ -91,11 +91,10 @@ void benchmark_add_cpu(int size) {
 
 }
 
-// If you have GPU (OpenCL) implementation, you can add a similar function:
 /*
 void benchmark_add_gpu(int size) {
-    // Similar to benchmark_add_cpu, but use ops::add_gpu
-    // You'll need to handle OpenCL context creation and memory transfers
+    // gotta Use ops::add_gpu
+    // OpenCL context creation/ memory transfers
 }
 */
 
@@ -107,7 +106,7 @@ int main() {
         std::cout << std::endl;
     }
 
-    // If you implement GPU benchmarks:
+    // for gpu
     /*
     for (int size : sizes) {
         benchmark_add_gpu(size);
