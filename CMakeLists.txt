@@ -19,13 +19,40 @@ add_library(annof
     src/scheduler.cpp
     src/optimization_pass.cpp
     src/benchmark.cpp
+    src/opencl_optimizations.cpp
 )
 
-# Link against OpenCL
+
+target_include_directories(annof PUBLIC ${OpenCL_INCLUDE_DIRS})
 target_link_libraries(annof ${OpenCL_LIBRARIES})
 
+#demo
+add_executable(demo_app examples/demo_app.cpp)
+target_link_libraries(demo_app annof ${OpenCL_LIBRARIES})
+
+
 # testssss
-add_subdirectory(tests)
-add_subdirectory(examples)
+# add_subdirectory(tests)
+# add_subdirectory(examples)
+
+add_executable(test_ops tests/test_ops.cpp)
+target_link_libraries(test_ops annof_lib)
+
+
+# Benchmarks
+add_executable(benchmark_ops tests/benchmark_ops.cpp)
+target_link_libraries(benchmark_ops annof_lib)
+
+if(APPLE)
+    target_link_libraries(benchmark_ops 
+        "-framework CoreFoundation"
+        "-framework OpenCL"
+    )
+endif()
+
+
+
+
+
 
 

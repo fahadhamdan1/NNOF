@@ -1,0 +1,6 @@
+/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles/annof.dir
+/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles/demo_app.dir
+/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles/test_ops.dir
+/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles/benchmark_ops.dir
+/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles/edit_cache.dir
+/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles/rebuild_cache.dir

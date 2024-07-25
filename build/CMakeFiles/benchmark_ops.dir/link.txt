@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/benchmark_ops.dir/tests/benchmark_ops.cpp.o -o benchmark_ops  -lannof_lib -framework CoreFoundation -framework OpenCL
