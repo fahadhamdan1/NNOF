@@ -19,7 +19,7 @@ void add_cpu(const Tensor& a, const Tensor& b, Tensor& result) {
     const float* a_data = a.data();
     const float* b_data = b.data();
     float* result_data = result.data();
-    int size = a.shape()[0];
+    int size = a.shape()[0] * a.shape()[1];
 
     int i = 0;
     for (; i <= size - 8; i += 8) {
