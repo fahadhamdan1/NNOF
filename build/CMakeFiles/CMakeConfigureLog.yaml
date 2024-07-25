@@ -715,3 +715,42 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/Cellar/cmake/3.29.3/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/local/Cellar/cmake/3.29.3/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/local/Cellar/cmake/3.29.3/share/cmake/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:58 (CHECK_CXX_COMPILER_FLAG)"
+    checks:
+      - "Performing Test COMPILER_SUPPORTS_AVX"
+    directories:
+      source: "/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles/CMakeScratch/TryCompile-2oOQSK"
+      binary: "/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles/CMakeScratch/TryCompile-2oOQSK"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk"
+    buildResult:
+      variable: "COMPILER_SUPPORTS_AVX"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles/CMakeScratch/TryCompile-2oOQSK'
+        
+        Run Build Command(s): /usr/local/Cellar/cmake/3.29.3/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_0af33/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_0af33.dir/build.make CMakeFiles/cmTC_0af33.dir/build
+        Building CXX object CMakeFiles/cmTC_0af33.dir/src.cxx.o
+        /Library/Developer/CommandLineTools/usr/bin/c++ -DCOMPILER_SUPPORTS_AVX  -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk   -mavx -MD -MT CMakeFiles/cmTC_0af33.dir/src.cxx.o -MF CMakeFiles/cmTC_0af33.dir/src.cxx.o.d -o CMakeFiles/cmTC_0af33.dir/src.cxx.o -c /Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles/CMakeScratch/TryCompile-2oOQSK/src.cxx
+        Linking CXX executable cmTC_0af33
+        /usr/local/Cellar/cmake/3.29.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0af33.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_0af33.dir/src.cxx.o -o cmTC_0af33
+        
+      exitCode: 0
+...

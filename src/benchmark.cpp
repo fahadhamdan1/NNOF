@@ -1,5 +1,13 @@
 #include "benchmark.h"
 #include "ops.h"
+#include <iostream>
+
+void Benchmark::printResults(const std::string& name, const Benchmark::Result& result) {
+    std::cout << "Benchmark: " << name << std::endl;
+    std::cout << "  Latency: " << result.latency << " ms" << std::endl;
+    std::cout << "  Throughput: " << result.throughput << " ops/s" << std::endl;
+    std::cout << "  Memory usage: " << result.memory_usage << " bytes" << std::endl;
+}
 
 double Benchmark::measure_latency(std::function<void(const std::vector<std::shared_ptr<Tensor>>&)> func, const std::vector<std::shared_ptr<Tensor>>& tensors) {
     auto start = std::chrono::high_resolution_clock::now();

@@ -92,6 +92,7 @@ test_ops_EXTERNAL_OBJECTS =
 
 test_ops: CMakeFiles/test_ops.dir/tests/test_ops.cpp.o
 test_ops: CMakeFiles/test_ops.dir/build.make
+test_ops: libannof.a
 test_ops: CMakeFiles/test_ops.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable test_ops"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_ops.dir/link.txt --verbose=$(VERBOSE)

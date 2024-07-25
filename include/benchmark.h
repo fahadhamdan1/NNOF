@@ -8,6 +8,7 @@
 #include <algorithm>
 #include <iostream>
 
+#include <tensor.h>
 
 #ifdef __APPLE__
 #include <OpenCL/cl.h>
@@ -32,7 +33,6 @@ public:
         result.throughput = measure_throughput(func, tensors, iterations);
         result.memory_usage = measure_memory_usage(tensors);
 
-        printResults(name, result);
         return result;
     }
 

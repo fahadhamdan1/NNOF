@@ -136,7 +136,7 @@ CMakeFiles/demo_app.dir/clean:
 # Target rules for target CMakeFiles/test_ops.dir
 
 # All Build rule for target.
-CMakeFiles/test_ops.dir/all:
+CMakeFiles/test_ops.dir/all: CMakeFiles/annof.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ops.dir/build.make CMakeFiles/test_ops.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ops.dir/build.make CMakeFiles/test_ops.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles --progress-num=13,14 "Built target test_ops"
@@ -144,7 +144,7 @@ CMakeFiles/test_ops.dir/all:
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_ops.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_ops.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles 0
 .PHONY : CMakeFiles/test_ops.dir/rule
@@ -162,7 +162,7 @@ CMakeFiles/test_ops.dir/clean:
 # Target rules for target CMakeFiles/benchmark_ops.dir
 
 # All Build rule for target.
-CMakeFiles/benchmark_ops.dir/all:
+CMakeFiles/benchmark_ops.dir/all: CMakeFiles/annof.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_ops.dir/build.make CMakeFiles/benchmark_ops.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_ops.dir/build.make CMakeFiles/benchmark_ops.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles --progress-num=9,10 "Built target benchmark_ops"
@@ -170,7 +170,7 @@ CMakeFiles/benchmark_ops.dir/all:
 
 # Build rule for subdir invocation for target.
 CMakeFiles/benchmark_ops.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/benchmark_ops.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles 0
 .PHONY : CMakeFiles/benchmark_ops.dir/rule

@@ -1,1 +1,1 @@
-/Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/demo_app.dir/examples/demo_app.cpp.o -o demo_app  libannof.a -framework OpenCL
+/Library/Developer/CommandLineTools/usr/bin/c++  -mavx -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/demo_app.dir/examples/demo_app.cpp.o -o demo_app  libannof.a -framework OpenCL

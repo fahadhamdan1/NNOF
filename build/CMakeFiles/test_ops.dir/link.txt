@@ -1,1 +1,1 @@
-/Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test_ops.dir/tests/test_ops.cpp.o -o test_ops  -lannof_lib
+/Library/Developer/CommandLineTools/usr/bin/c++  -mavx -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test_ops.dir/tests/test_ops.cpp.o -o test_ops  libannof.a -framework OpenCL

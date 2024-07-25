@@ -18,17 +18,32 @@ void benchmark_add_cpu(int size) {
 
     std::vector<std::shared_ptr<Tensor>> tensors = {a, b, result};
 
-    auto add_func = [](const std::vector<std::shared_ptr<Tensor>>& t) {
+    auto add_func_optimized = [](const std::vector<std::shared_ptr<Tensor>>& t) {
         ops::add_cpu(*t[0], *t[1], *t[2]);
     };
 
+    auto add_func_baseline = [](const std::vector<std::shared_ptr<Tensor>>& t) {
+        ops::add_cpu_baseline(*t[0], *t[1], *t[2]);
+    };
+
     std::string benchmark_name = "CPU Addition " + std::to_string(size) + "x" + std::to_string(size);
-    Benchmark::Result benchmark_result = Benchmark::run(benchmark_name, add_func, tensors);
+    Benchmark::Result result_optimized = Benchmark::run(benchmark_name + " (Optimized)", add_func_optimized, tensors);
+    Benchmark::Result result_baseline = Benchmark::run(benchmark_name + " (Baseline)", add_func_baseline, tensors);
+
 
     // You can use the result for further analysis if needed
-    std::cout << "Latency: " << benchmark_result.latency << " ms" << std::endl;
-    std::cout << "Throughput: " << benchmark_result.throughput << " ops/s" << std::endl;
-    std::cout << "Memory usage: " << benchmark_result.memory_usage << " bytes" << std::endl;
+
+    double latency_improvement = (result_baseline.latency - result_optimized.latency) / result_baseline.latency * 100.0;
+    double throughput_improvement = (result_optimized.throughput - result_baseline.throughput) / result_baseline.throughput * 100.0;
+
+    std::cout << "Improvements for " << benchmark_name << ":" << std::endl;
+    std::cout << "  Optimized Latency: " << result_optimized.latency << " ms" << std::endl;
+    std::cout << "    Latency improvement: " << latency_improvement << "%" << std::endl;
+    std::cout << "  Optimized Throughput: " << result_optimized.throughput << " ops/s" << std::endl;
+    std::cout << "    Throughput improvement: " << throughput_improvement << "%" << std::endl;
+    std::cout << "  Optimized Memory usage: " << result_optimized.memory_usage << " bytes" << std::endl;
+    std::cout << std::endl;
+
 }
 
 // If you have GPU (OpenCL) implementation, you can add a similar function:

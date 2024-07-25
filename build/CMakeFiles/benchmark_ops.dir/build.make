@@ -92,6 +92,7 @@ benchmark_ops_EXTERNAL_OBJECTS =
 
 benchmark_ops: CMakeFiles/benchmark_ops.dir/tests/benchmark_ops.cpp.o
 benchmark_ops: CMakeFiles/benchmark_ops.dir/build.make
+benchmark_ops: libannof.a
 benchmark_ops: CMakeFiles/benchmark_ops.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable benchmark_ops"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/benchmark_ops.dir/link.txt --verbose=$(VERBOSE)

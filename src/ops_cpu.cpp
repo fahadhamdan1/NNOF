@@ -3,6 +3,18 @@
 
 namespace ops {
 
+void add_cpu_baseline(const Tensor& a, const Tensor& b, Tensor& result) {
+    const float* a_data = a.data();
+    const float* b_data = b.data();
+    float* result_data = result.data();
+    int size = a.shape()[0] * a.shape()[1];
+
+    for (int i = 0; i < size; ++i) {
+        result_data[i] = a_data[i] + b_data[i];
+    }
+}
+
+
 void add_cpu(const Tensor& a, const Tensor& b, Tensor& result) {
     const float* a_data = a.data();
     const float* b_data = b.data();

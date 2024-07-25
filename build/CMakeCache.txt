@@ -403,6 +403,8 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Test COMPILER_SUPPORTS_AVX
+COMPILER_SUPPORTS_AVX:INTERNAL=1
 //Details about finding OpenCL
 FIND_PACKAGE_MESSAGE_DETAILS_OpenCL:INTERNAL=[/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks/OpenCL.framework][/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks/OpenCL.framework][v1.2()]
 //Details about finding PYTHON
