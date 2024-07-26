@@ -34,4 +34,56 @@ void add_cpu(const Tensor& a, const Tensor& b, Tensor& result) {
     }
 }
 
+void matmul_cpu_baseline(const Tensor& a, const Tensor& b, Tensor& result) {
+    const float* a_data = a.data();
+    const float* b_data = b.data();
+    float* result_data = result.data();
+    int m = a.shape()[0];
+    int n = b.shape()[1];
+    int k = a.shape()[1];
+
+    for (int i = 0; i < m; ++i) {
+        for (int j = 0; j < n; ++j) {
+            float sum = 0.0f;
+            for (int l = 0; l < k; ++l) {
+                sum += a_data[i * k + l] * b_data[l * n + j];
+            }
+            result_data[i * n + j] = sum;
+        }
+    }
+}
+
+void matmul_cpu(const Tensor& a, const Tensor& b, Tensor& result) {
+    const float* a_data = a.data();
+    const float* b_data = b.data();
+    float* result_data = result.data();
+    int m = a.shape()[0];
+    int n = b.shape()[1];
+    int k = a.shape()[1];
+
+    const int block_size = 64;
+
+    for (int i = 0; i < m; i += block_size) {
+        for (int j = 0; j < n; j += block_size) {
+            for (int l = 0; l < k; l += block_size) {
+                int max_i = std::min(i + block_size, m);
+                int max_j = std::min(j + block_size, n);
+                int max_l = std::min(l + block_size, k);
+
+                for (int ii = i; ii < max_i; ++ii) {
+                    for (int jj = j; jj < max_j; jj += 8) {
+                        __m256 sum = _mm256_setzero_ps();
+                        for (int ll = l; ll < max_l; ++ll) {
+                            __m256 a_val = _mm256_set1_ps(a_data[ii * k + ll]);
+                            __m256 b_val = _mm256_loadu_ps(&b_data[ll * n + jj]);
+                            sum = _mm256_add_ps(sum, _mm256_mul_ps(a_val, b_val));
+                        }
+                        _mm256_storeu_ps(&result_data[ii * n + jj], sum);
+                    }
+                }
+            }
+        }
+    }
+}
+
 }  // namespace ops

@@ -44,7 +44,8 @@ void benchmark_add_cpu(int size) {
 
     const int warmup_iterations = 10;
     const int timing_iterations = 100;
-    // Warm-up runs
+
+    //Warm-up runs
     for (int i = 0; i < warmup_iterations; ++i) {
         ops::add_cpu_baseline(*a, *b, *result);
         ops::add_cpu(*a, *b, *result);
@@ -70,7 +71,7 @@ void benchmark_add_cpu(int size) {
         ops::add_cpu_baseline(*t[0], *t[1], *t[2]);
     };
 
-
+    
     std::string benchmark_name = "CPU Addition " + std::to_string(size) + "x" + std::to_string(size);
     Benchmark::Result result_optimized = Benchmark::run(benchmark_name + " (Optimized)", add_func_optimized, tensors);
     Benchmark::Result result_baseline = Benchmark::run(benchmark_name + " (Baseline)", add_func_baseline, tensors);
