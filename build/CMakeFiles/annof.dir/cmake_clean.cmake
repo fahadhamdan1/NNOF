@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/annof.dir/src/benchmark.cpp.o"
   "CMakeFiles/annof.dir/src/benchmark.cpp.o.d"
+  "CMakeFiles/annof.dir/src/fully_connected_layer.cpp.o"
+  "CMakeFiles/annof.dir/src/fully_connected_layer.cpp.o.d"
+  "CMakeFiles/annof.dir/src/gpu_operations.cpp.o"
+  "CMakeFiles/annof.dir/src/gpu_operations.cpp.o.d"
   "CMakeFiles/annof.dir/src/opencl_optimizations.cpp.o"
   "CMakeFiles/annof.dir/src/opencl_optimizations.cpp.o.d"
   "CMakeFiles/annof.dir/src/ops_cpu.cpp.o"

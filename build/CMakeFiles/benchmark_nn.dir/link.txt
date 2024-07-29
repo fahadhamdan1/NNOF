@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++  -mavx -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/benchmark_nn.dir/tests/benchmark_nn.cpp.o -o benchmark_nn  libannof.a -framework OpenCL

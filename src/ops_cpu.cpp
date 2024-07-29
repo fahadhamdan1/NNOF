@@ -61,6 +61,9 @@ void matmul_cpu(const Tensor& a, const Tensor& b, Tensor& result) {
     int n = b.shape()[1];
     int k = a.shape()[1];
 
+    // Initialize result to zero
+    std::fill(result_data, result_data + m * n, 0.0f);
+
     const int block_size = 64;
 
     for (int i = 0; i < m; i += block_size) {
@@ -72,13 +75,21 @@ void matmul_cpu(const Tensor& a, const Tensor& b, Tensor& result) {
 
                 for (int ii = i; ii < max_i; ++ii) {
                     for (int jj = j; jj < max_j; jj += 8) {
-                        __m256 sum = _mm256_setzero_ps();
+                        __m256 sum = _mm256_loadu_ps(&result_data[ii * n + jj]);
                         for (int ll = l; ll < max_l; ++ll) {
                             __m256 a_val = _mm256_set1_ps(a_data[ii * k + ll]);
                             __m256 b_val = _mm256_loadu_ps(&b_data[ll * n + jj]);
                             sum = _mm256_add_ps(sum, _mm256_mul_ps(a_val, b_val));
                         }
                         _mm256_storeu_ps(&result_data[ii * n + jj], sum);
+                    }
+                    
+                    for (int jj = (max_j / 8) * 8; jj < max_j; ++jj) {
+                        float sum = result_data[ii * n + jj];
+                        for (int ll = l; ll < max_l; ++ll) {
+                            sum += a_data[ii * k + ll] * b_data[ll * n + jj];
+                        }
+                        result_data[ii * n + jj] = sum;
                     }
                 }
             }

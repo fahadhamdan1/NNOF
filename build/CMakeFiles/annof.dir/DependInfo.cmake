@@ -9,6 +9,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/fahadhamdan/Projects/ANNOF/src/benchmark.cpp" "CMakeFiles/annof.dir/src/benchmark.cpp.o" "gcc" "CMakeFiles/annof.dir/src/benchmark.cpp.o.d"
+  "/Users/fahadhamdan/Projects/ANNOF/src/fully_connected_layer.cpp" "CMakeFiles/annof.dir/src/fully_connected_layer.cpp.o" "gcc" "CMakeFiles/annof.dir/src/fully_connected_layer.cpp.o.d"
+  "/Users/fahadhamdan/Projects/ANNOF/src/gpu_operations.cpp" "CMakeFiles/annof.dir/src/gpu_operations.cpp.o" "gcc" "CMakeFiles/annof.dir/src/gpu_operations.cpp.o.d"
   "/Users/fahadhamdan/Projects/ANNOF/src/opencl_optimizations.cpp" "CMakeFiles/annof.dir/src/opencl_optimizations.cpp.o" "gcc" "CMakeFiles/annof.dir/src/opencl_optimizations.cpp.o.d"
   "/Users/fahadhamdan/Projects/ANNOF/src/ops_cpu.cpp" "CMakeFiles/annof.dir/src/ops_cpu.cpp.o" "gcc" "CMakeFiles/annof.dir/src/ops_cpu.cpp.o.d"
   "/Users/fahadhamdan/Projects/ANNOF/src/ops_opencl.cpp" "CMakeFiles/annof.dir/src/ops_opencl.cpp.o" "gcc" "CMakeFiles/annof.dir/src/ops_opencl.cpp.o.d"

@@ -67,6 +67,7 @@ all: CMakeFiles/annof.dir/all
 all: CMakeFiles/demo_app.dir/all
 all: CMakeFiles/test_ops.dir/all
 all: CMakeFiles/benchmark_ops.dir/all
+all: CMakeFiles/benchmark_nn.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -78,6 +79,7 @@ clean: CMakeFiles/annof.dir/clean
 clean: CMakeFiles/demo_app.dir/clean
 clean: CMakeFiles/test_ops.dir/clean
 clean: CMakeFiles/benchmark_ops.dir/clean
+clean: CMakeFiles/benchmark_nn.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -87,12 +89,12 @@ clean: CMakeFiles/benchmark_ops.dir/clean
 CMakeFiles/annof.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/annof.dir/build.make CMakeFiles/annof.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/annof.dir/build.make CMakeFiles/annof.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target annof"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target annof"
 .PHONY : CMakeFiles/annof.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/annof.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/annof.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles 0
 .PHONY : CMakeFiles/annof.dir/rule
@@ -113,12 +115,12 @@ CMakeFiles/annof.dir/clean:
 CMakeFiles/demo_app.dir/all: CMakeFiles/annof.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_app.dir/build.make CMakeFiles/demo_app.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_app.dir/build.make CMakeFiles/demo_app.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles --progress-num=11,12 "Built target demo_app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles --progress-num=15,16 "Built target demo_app"
 .PHONY : CMakeFiles/demo_app.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/demo_app.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles 12
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/demo_app.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles 0
 .PHONY : CMakeFiles/demo_app.dir/rule
@@ -139,12 +141,12 @@ CMakeFiles/demo_app.dir/clean:
 CMakeFiles/test_ops.dir/all: CMakeFiles/annof.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ops.dir/build.make CMakeFiles/test_ops.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ops.dir/build.make CMakeFiles/test_ops.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles --progress-num=13,14 "Built target test_ops"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles --progress-num=17,18 "Built target test_ops"
 .PHONY : CMakeFiles/test_ops.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_ops.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles 12
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_ops.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles 0
 .PHONY : CMakeFiles/test_ops.dir/rule
@@ -165,12 +167,12 @@ CMakeFiles/test_ops.dir/clean:
 CMakeFiles/benchmark_ops.dir/all: CMakeFiles/annof.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_ops.dir/build.make CMakeFiles/benchmark_ops.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_ops.dir/build.make CMakeFiles/benchmark_ops.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles --progress-num=9,10 "Built target benchmark_ops"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles --progress-num=13,14 "Built target benchmark_ops"
 .PHONY : CMakeFiles/benchmark_ops.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/benchmark_ops.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles 12
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/benchmark_ops.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles 0
 .PHONY : CMakeFiles/benchmark_ops.dir/rule
@@ -183,6 +185,32 @@ benchmark_ops: CMakeFiles/benchmark_ops.dir/rule
 CMakeFiles/benchmark_ops.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_ops.dir/build.make CMakeFiles/benchmark_ops.dir/clean
 .PHONY : CMakeFiles/benchmark_ops.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/benchmark_nn.dir
+
+# All Build rule for target.
+CMakeFiles/benchmark_nn.dir/all: CMakeFiles/annof.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_nn.dir/build.make CMakeFiles/benchmark_nn.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_nn.dir/build.make CMakeFiles/benchmark_nn.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles --progress-num=11,12 "Built target benchmark_nn"
+.PHONY : CMakeFiles/benchmark_nn.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/benchmark_nn.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles 12
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/benchmark_nn.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles 0
+.PHONY : CMakeFiles/benchmark_nn.dir/rule
+
+# Convenience name for target.
+benchmark_nn: CMakeFiles/benchmark_nn.dir/rule
+.PHONY : benchmark_nn
+
+# clean rule for target.
+CMakeFiles/benchmark_nn.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_nn.dir/build.make CMakeFiles/benchmark_nn.dir/clean
+.PHONY : CMakeFiles/benchmark_nn.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -168,6 +168,19 @@ benchmark_ops/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_ops.dir/build.make CMakeFiles/benchmark_ops.dir/build
 .PHONY : benchmark_ops/fast
 
+#=============================================================================
+# Target rules for targets named benchmark_nn
+
+# Build rule for target.
+benchmark_nn: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 benchmark_nn
+.PHONY : benchmark_nn
+
+# fast build rule for target.
+benchmark_nn/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_nn.dir/build.make CMakeFiles/benchmark_nn.dir/build
+.PHONY : benchmark_nn/fast
+
 examples/demo_app.o: examples/demo_app.cpp.o
 .PHONY : examples/demo_app.o
 
@@ -215,6 +228,54 @@ src/benchmark.s: src/benchmark.cpp.s
 src/benchmark.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/annof.dir/build.make CMakeFiles/annof.dir/src/benchmark.cpp.s
 .PHONY : src/benchmark.cpp.s
+
+src/fully_connected_layer.o: src/fully_connected_layer.cpp.o
+.PHONY : src/fully_connected_layer.o
+
+# target to build an object file
+src/fully_connected_layer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/annof.dir/build.make CMakeFiles/annof.dir/src/fully_connected_layer.cpp.o
+.PHONY : src/fully_connected_layer.cpp.o
+
+src/fully_connected_layer.i: src/fully_connected_layer.cpp.i
+.PHONY : src/fully_connected_layer.i
+
+# target to preprocess a source file
+src/fully_connected_layer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/annof.dir/build.make CMakeFiles/annof.dir/src/fully_connected_layer.cpp.i
+.PHONY : src/fully_connected_layer.cpp.i
+
+src/fully_connected_layer.s: src/fully_connected_layer.cpp.s
+.PHONY : src/fully_connected_layer.s
+
+# target to generate assembly for a file
+src/fully_connected_layer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/annof.dir/build.make CMakeFiles/annof.dir/src/fully_connected_layer.cpp.s
+.PHONY : src/fully_connected_layer.cpp.s
+
+src/gpu_operations.o: src/gpu_operations.cpp.o
+.PHONY : src/gpu_operations.o
+
+# target to build an object file
+src/gpu_operations.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/annof.dir/build.make CMakeFiles/annof.dir/src/gpu_operations.cpp.o
+.PHONY : src/gpu_operations.cpp.o
+
+src/gpu_operations.i: src/gpu_operations.cpp.i
+.PHONY : src/gpu_operations.i
+
+# target to preprocess a source file
+src/gpu_operations.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/annof.dir/build.make CMakeFiles/annof.dir/src/gpu_operations.cpp.i
+.PHONY : src/gpu_operations.cpp.i
+
+src/gpu_operations.s: src/gpu_operations.cpp.s
+.PHONY : src/gpu_operations.s
+
+# target to generate assembly for a file
+src/gpu_operations.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/annof.dir/build.make CMakeFiles/annof.dir/src/gpu_operations.cpp.s
+.PHONY : src/gpu_operations.cpp.s
 
 src/opencl_optimizations.o: src/opencl_optimizations.cpp.o
 .PHONY : src/opencl_optimizations.o
@@ -360,6 +421,30 @@ src/tensor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/annof.dir/build.make CMakeFiles/annof.dir/src/tensor.cpp.s
 .PHONY : src/tensor.cpp.s
 
+tests/benchmark_nn.o: tests/benchmark_nn.cpp.o
+.PHONY : tests/benchmark_nn.o
+
+# target to build an object file
+tests/benchmark_nn.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_nn.dir/build.make CMakeFiles/benchmark_nn.dir/tests/benchmark_nn.cpp.o
+.PHONY : tests/benchmark_nn.cpp.o
+
+tests/benchmark_nn.i: tests/benchmark_nn.cpp.i
+.PHONY : tests/benchmark_nn.i
+
+# target to preprocess a source file
+tests/benchmark_nn.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_nn.dir/build.make CMakeFiles/benchmark_nn.dir/tests/benchmark_nn.cpp.i
+.PHONY : tests/benchmark_nn.cpp.i
+
+tests/benchmark_nn.s: tests/benchmark_nn.cpp.s
+.PHONY : tests/benchmark_nn.s
+
+# target to generate assembly for a file
+tests/benchmark_nn.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_nn.dir/build.make CMakeFiles/benchmark_nn.dir/tests/benchmark_nn.cpp.s
+.PHONY : tests/benchmark_nn.cpp.s
+
 tests/benchmark_ops.o: tests/benchmark_ops.cpp.o
 .PHONY : tests/benchmark_ops.o
 
@@ -417,6 +502,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... annof"
+	@echo "... benchmark_nn"
 	@echo "... benchmark_ops"
 	@echo "... demo_app"
 	@echo "... test_ops"
@@ -426,6 +512,12 @@ help:
 	@echo "... src/benchmark.o"
 	@echo "... src/benchmark.i"
 	@echo "... src/benchmark.s"
+	@echo "... src/fully_connected_layer.o"
+	@echo "... src/fully_connected_layer.i"
+	@echo "... src/fully_connected_layer.s"
+	@echo "... src/gpu_operations.o"
+	@echo "... src/gpu_operations.i"
+	@echo "... src/gpu_operations.s"
 	@echo "... src/opencl_optimizations.o"
 	@echo "... src/opencl_optimizations.i"
 	@echo "... src/opencl_optimizations.s"
@@ -444,6 +536,9 @@ help:
 	@echo "... src/tensor.o"
 	@echo "... src/tensor.i"
 	@echo "... src/tensor.s"
+	@echo "... tests/benchmark_nn.o"
+	@echo "... tests/benchmark_nn.i"
+	@echo "... tests/benchmark_nn.s"
 	@echo "... tests/benchmark_ops.o"
 	@echo "... tests/benchmark_ops.i"
 	@echo "... tests/benchmark_ops.s"

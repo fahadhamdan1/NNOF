@@ -167,6 +167,34 @@ CMakeFiles/annof.dir/src/opencl_optimizations.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/annof.dir/src/opencl_optimizations.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fahadhamdan/Projects/ANNOF/src/opencl_optimizations.cpp -o CMakeFiles/annof.dir/src/opencl_optimizations.cpp.s
 
+CMakeFiles/annof.dir/src/fully_connected_layer.cpp.o: CMakeFiles/annof.dir/flags.make
+CMakeFiles/annof.dir/src/fully_connected_layer.cpp.o: /Users/fahadhamdan/Projects/ANNOF/src/fully_connected_layer.cpp
+CMakeFiles/annof.dir/src/fully_connected_layer.cpp.o: CMakeFiles/annof.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/annof.dir/src/fully_connected_layer.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/annof.dir/src/fully_connected_layer.cpp.o -MF CMakeFiles/annof.dir/src/fully_connected_layer.cpp.o.d -o CMakeFiles/annof.dir/src/fully_connected_layer.cpp.o -c /Users/fahadhamdan/Projects/ANNOF/src/fully_connected_layer.cpp
+
+CMakeFiles/annof.dir/src/fully_connected_layer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/annof.dir/src/fully_connected_layer.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fahadhamdan/Projects/ANNOF/src/fully_connected_layer.cpp > CMakeFiles/annof.dir/src/fully_connected_layer.cpp.i
+
+CMakeFiles/annof.dir/src/fully_connected_layer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/annof.dir/src/fully_connected_layer.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fahadhamdan/Projects/ANNOF/src/fully_connected_layer.cpp -o CMakeFiles/annof.dir/src/fully_connected_layer.cpp.s
+
+CMakeFiles/annof.dir/src/gpu_operations.cpp.o: CMakeFiles/annof.dir/flags.make
+CMakeFiles/annof.dir/src/gpu_operations.cpp.o: /Users/fahadhamdan/Projects/ANNOF/src/gpu_operations.cpp
+CMakeFiles/annof.dir/src/gpu_operations.cpp.o: CMakeFiles/annof.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/annof.dir/src/gpu_operations.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/annof.dir/src/gpu_operations.cpp.o -MF CMakeFiles/annof.dir/src/gpu_operations.cpp.o.d -o CMakeFiles/annof.dir/src/gpu_operations.cpp.o -c /Users/fahadhamdan/Projects/ANNOF/src/gpu_operations.cpp
+
+CMakeFiles/annof.dir/src/gpu_operations.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/annof.dir/src/gpu_operations.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fahadhamdan/Projects/ANNOF/src/gpu_operations.cpp > CMakeFiles/annof.dir/src/gpu_operations.cpp.i
+
+CMakeFiles/annof.dir/src/gpu_operations.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/annof.dir/src/gpu_operations.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fahadhamdan/Projects/ANNOF/src/gpu_operations.cpp -o CMakeFiles/annof.dir/src/gpu_operations.cpp.s
+
 # Object files for target annof
 annof_OBJECTS = \
 "CMakeFiles/annof.dir/src/tensor.cpp.o" \
@@ -175,7 +203,9 @@ annof_OBJECTS = \
 "CMakeFiles/annof.dir/src/scheduler.cpp.o" \
 "CMakeFiles/annof.dir/src/optimization_pass.cpp.o" \
 "CMakeFiles/annof.dir/src/benchmark.cpp.o" \
-"CMakeFiles/annof.dir/src/opencl_optimizations.cpp.o"
+"CMakeFiles/annof.dir/src/opencl_optimizations.cpp.o" \
+"CMakeFiles/annof.dir/src/fully_connected_layer.cpp.o" \
+"CMakeFiles/annof.dir/src/gpu_operations.cpp.o"
 
 # External object files for target annof
 annof_EXTERNAL_OBJECTS =
@@ -187,9 +217,11 @@ libannof.a: CMakeFiles/annof.dir/src/scheduler.cpp.o
 libannof.a: CMakeFiles/annof.dir/src/optimization_pass.cpp.o
 libannof.a: CMakeFiles/annof.dir/src/benchmark.cpp.o
 libannof.a: CMakeFiles/annof.dir/src/opencl_optimizations.cpp.o
+libannof.a: CMakeFiles/annof.dir/src/fully_connected_layer.cpp.o
+libannof.a: CMakeFiles/annof.dir/src/gpu_operations.cpp.o
 libannof.a: CMakeFiles/annof.dir/build.make
 libannof.a: CMakeFiles/annof.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library libannof.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/fahadhamdan/Projects/ANNOF/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX static library libannof.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/annof.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/annof.dir/link.txt --verbose=$(VERBOSE)
 

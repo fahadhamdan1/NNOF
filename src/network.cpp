@@ -1,49 +1,58 @@
 #include "network.h"
 #include "activation_functions.h"
 #include "loss_functions.h"
-#include <cmath>
 #include <iostream>
 
-void Network::add_layer(std::unique_ptr<FullyConnectedLayer> layer) {
-    layers.push_back(std::move(layer));
+void Network::add_fully_connected_layer(int input_size, int output_size) {
+    fc_layers.push_back(std::make_unique<FullyConnectedLayer>(input_size, output_size));
+}
+
+void Network::add_convolutional_layer(int in_channels, int out_channels, int kernel_size, int stride, int padding) {
+    conv_layers.push_back(std::make_unique<ConvolutionalLayer>(in_channels, out_channels, kernel_size, stride, padding));
 }
 
 Tensor Network::forward(const Tensor& input) {
-    activations.clear();
-    activations.push_back(input);
-
     Tensor current = input;
-    for (const auto& layer : layers) {
+    
+    for (const auto& layer : conv_layers) {
         current = layer->forward(current);
-        current = activation::relu(current);  //using relu for now
-        activations.push_back(current);
+        current = activation::relu(current);
     }
-
+    
+    // Flatten the output of convolutional layers for fully connected layers
+    if (!fc_layers.empty() && current.shape().size() > 2) {
+        int flat_size = current.shape()[1] * current.shape()[2] * current.shape()[3];
+        current = Tensor({current.shape()[0], flat_size}, current.data());
+    }
+    
+    for (const auto& layer : fc_layers) {
+        current = layer->forward(current);
+        current = activation::relu(current);
+    }
+    
     return current;
-}
-
-void Network::backward(const Tensor& target, float learning_rate) {
-    Tensor error = activations.back() - target;
-
-    // backpropagataion
-    for (int i = layers.size() - 1; i >= 0; --i) {
-        Tensor activation_gradient = activation::relu_derivative(activations[i + 1]);
-        error = error * activation_gradient;
-        error = layers[i]->backward(error, learning_rate);
-    }
 }
 
 void Network::train(const std::vector<Tensor>& inputs, const std::vector<Tensor>& targets, int epochs, float learning_rate) {
     for (int epoch = 0; epoch < epochs; ++epoch) {
         float total_loss = 0.0f;
+        
         for (size_t i = 0; i < inputs.size(); ++i) {
+            //forward pass and compute loss
             Tensor predictions = forward(inputs[i]);
             total_loss += loss::mse(predictions, targets[i]);
             
+            //assumes only fully connected layers for now, no real backward pass
             Tensor error = loss::mse_gradient(predictions, targets[i]);
-            backward(error, learning_rate);
+            
+            for (int j = fc_layers.size() - 1; j >= 0; --j) {
+                error = fc_layers[j]->backward(error, learning_rate);
+            }
+            
         }
+         
+        float avg_loss = total_loss / inputs.size();
         std::cout << "Epoch " << epoch + 1 << "/" << epochs 
-                  << ", Loss: " << total_loss / inputs.size() << std::endl;
+                  << ", Average Loss: " << avg_loss << std::endl;
     }
 }
