@@ -20,3 +20,6 @@ This project implements:
 - `fully_connected_layer.h/cpp`: Implementation of a fully connected neural network layer
 - `gpu_operations.h/cpp`: Wrapper for OpenCL operations
 - `benchmark.h/cpp`: Benchmarking utilities
+
+<img width="365" alt="image" src="https://github.com/user-attachments/assets/cf55ade3-527b-4ef0-a7b9-ec15f60696d2">
+
