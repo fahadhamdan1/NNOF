@@ -1,6 +1,6 @@
-# ANNOF: Advanced Neural Network Optimization Framework
+# NNOF: Neural Network Optimization Framework
 
-ANNOF is a C++ project aimed at implementing and optimizing neural network operations for both CPU and GPU. The primary goal is to compare performance between basic CPU operations and optimized CPU operations (SIMD), as well as to compare performance between CPU and GPU implementations of basic neural network components.
+This is a C++ project aimed at implementing and optimizing neural network operations for both CPU and GPU. The primary goal is to compare performance between basic CPU operations and optimized CPU operations (SIMD), as well as to compare performance between CPU and GPU implementations of basic neural network components.
 
 ## Project Overview
 
