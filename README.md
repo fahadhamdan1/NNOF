@@ -6,11 +6,11 @@ ANNOF is a C++ project aimed at implementing and optimizing neural network opera
 
 This project implements:
 
-1. A basic Tensor class for handling multi-dimensional data
+1. A Tensor class for handling multi-dimensional data
 2. CPU implementations of basic operations (addition, matrix multiplication)
-3. GPU (OpenCL) implementations of the same operations
-4. A FullyConnectedLayer class with both CPU and GPU forward passes
-5. A benchmarking system to compare CPU and GPU performance (Latency, Throughput, Memory Usage)
+3. SIMD-optimized versions of these operations using AVX instructions
+4. A FullyConnectedLayer class with both CPU and GPU forward pass, using OpenCL for GPU
+5. A benchmarking system to compare baseline and optimized CPU performance, and to compare CPU and GPU performance (Latency, Throughput, Memory Usage)
 
 ## Key Components
 
