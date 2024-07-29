@@ -8,9 +8,8 @@ public:
     FullyConnectedLayer(int input_size, int output_size);
     
     Tensor forward(const Tensor& input);
-    Tensor backward(const Tensor& output_gradient);
+    Tensor backward(const Tensor& output_gradient, float learning_rate);
     
-    void update_parameters(float learning_rate);
 
 private:
     std::shared_ptr<Tensor> weights;

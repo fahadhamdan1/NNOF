@@ -86,4 +86,4 @@ void matmul_cpu(const Tensor& a, const Tensor& b, Tensor& result) {
     }
 }
 
-}  // namespace ops
+}

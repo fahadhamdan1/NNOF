@@ -1,4 +1,3 @@
-// ops_opencl.cpp
 #include "ops.h"
 #include <OpenCL/opencl.h>
 #include <iostream>
@@ -225,4 +224,4 @@ void matmul_gpu(const Tensor& a, const Tensor& b, Tensor& result) {
     clReleaseContext(context);
 }
 
-}  // namespace ops
+}

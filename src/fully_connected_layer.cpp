@@ -3,7 +3,7 @@
 #include <random>
 
 FullyConnectedLayer::FullyConnectedLayer(int input_size, int output_size) {
-    // Initialize weights and bias with random values
+    // init weights and bias with random values
     std::random_device rd;
     std::mt19937 gen(rd());
     std::normal_distribution<> d(0, 1);
@@ -25,7 +25,7 @@ Tensor FullyConnectedLayer::forward(const Tensor& input) {
     Tensor output(std::vector<int>{input.shape()[0], weights->shape()[1]});
     ops::matmul_cpu(*this->input, *weights, output);
     
-    // Add bias
+    //bias
     for (int i = 0; i < output.shape()[0]; ++i) {
         for (int j = 0; j < output.shape()[1]; ++j) {
             output.data()[i * output.shape()[1] + j] += bias->data()[j];
@@ -35,14 +35,13 @@ Tensor FullyConnectedLayer::forward(const Tensor& input) {
     return output;
 }
 
-Tensor FullyConnectedLayer::backward(const Tensor& output_gradient) {
-    // Compute gradients
+Tensor FullyConnectedLayer::backward(const Tensor& output_gradient, float learning_rate) {
     Tensor weights_gradient(weights->shape());
     ops::matmul_cpu(*input, output_gradient, weights_gradient);
 
     Tensor input_gradient(input->shape());
     Tensor weights_transposed(std::vector<int>{weights->shape()[1], weights->shape()[0]});
-    // Transpose weights
+
     for (int i = 0; i < weights->shape()[0]; ++i) {
         for (int j = 0; j < weights->shape()[1]; ++j) {
             weights_transposed.data()[j * weights->shape()[0] + i] = weights->data()[i * weights->shape()[1] + j];
@@ -50,7 +49,7 @@ Tensor FullyConnectedLayer::backward(const Tensor& output_gradient) {
     }
     ops::matmul_cpu(output_gradient, weights_transposed, input_gradient);
 
-    // Update weights and bias
+    //update weights and bias
     for (int i = 0; i < weights->shape()[0] * weights->shape()[1]; ++i) {
         weights->data()[i] -= learning_rate * weights_gradient.data()[i];
     }
@@ -64,9 +63,4 @@ Tensor FullyConnectedLayer::backward(const Tensor& output_gradient) {
     }
 
     return input_gradient;
-}
-
-void FullyConnectedLayer::update_parameters(float learning_rate) {
-    // This method is left empty because we're updating parameters in the backward pass
-    // You might want to implement more sophisticated optimizers here in the future
 }

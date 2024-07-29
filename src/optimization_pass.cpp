@@ -2,8 +2,7 @@
 #include <algorithm>
 
 void MemoryReductionPass::apply(std::vector<std::shared_ptr<Tensor>>& tensors) {
-    // Implement memory reduction 
-    // simple tensor func
+    // Implement memory reduction, simple tensor func
     if (tensors.size() < 2) return;
 
     auto it = std::adjacent_find(tensors.begin(), tensors.end(),
@@ -13,7 +12,7 @@ void MemoryReductionPass::apply(std::vector<std::shared_ptr<Tensor>>& tensors) {
 
     if (it != tensors.end()) {
         auto next = std::next(it);
-        // Fuse tensors by element-wise addition (just an example)
+        // example fusing tensors w/ element-wise
         for (size_t i = 0; i < (*it)->shape()[0]; ++i) {
             (*it)->data()[i] += (*next)->data()[i];
         }
@@ -35,12 +34,11 @@ void LatencyReductionPass::apply(std::vector<std::shared_ptr<Tensor>>& tensors) 
 #include <OpenCL/opencl.h>
 
 void OpenCLOptimizationPass::apply(std::vector<std::shared_ptr<Tensor>>& tensors) {
-    // OpenCL-specific optimizations
-    // maybe reorganize data for better memory coalescing? or adjust tensor sizes to match optimal work group sizes
+    // OpenCL-specific optimizations, maybe reorganize data for better memory coalescing? or adjust tensor sizes to match optimal work group sizes
     
     // placeholder for now
     for (auto& tensor : tensors) {
-        // Adjust tensor shape if not a multiple of 64
+        // change shape if not a multiple of 64
         auto shape = tensor->shape();
         if (shape[0] % 64 != 0) {
             int new_size = ((shape[0] / 64) + 1) * 64;

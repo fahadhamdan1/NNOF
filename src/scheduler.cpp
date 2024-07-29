@@ -15,6 +15,6 @@ Device Scheduler::select_device(const Tensor& a, const Tensor& b) {
     err = clGetDeviceIDs(platform, CL_DEVICE_TYPE_GPU, 1, &device, NULL);
     if (err != CL_SUCCESS) return Device::CPU;
     
-    // i guess metric is use GPU for larger tensors
+    // I guess metric is use GPU for larger tensors
     return (size > 1000000) ? Device::GPU : Device::CPU;
 }
