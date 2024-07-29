@@ -39,7 +39,5 @@ public:
     static double measure_latency(std::function<void(const std::vector<std::shared_ptr<Tensor>>&)> func, const std::vector<std::shared_ptr<Tensor>>& tensors);
     static double measure_throughput(std::function<void(const std::vector<std::shared_ptr<Tensor>>&)> func, const std::vector<std::shared_ptr<Tensor>>& tensors, int num_iterations);
     static size_t measure_memory_usage(const std::vector<std::shared_ptr<Tensor>>& tensors);
-
-private:
     static void printResults(const std::string& name, const Result& result);
 };
