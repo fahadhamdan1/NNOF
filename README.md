@@ -1,4 +1,4 @@
-# ANNOF: Advanced Neural Network Optimization Framework
+<img width="443" alt="image" src="https://github.com/user-attachments/assets/4aa27cec-372e-4824-9502-3bdc5cdf237b"># ANNOF: Advanced Neural Network Optimization Framework
 
 ANNOF is a C++ project aimed at implementing and optimizing neural network operations for both CPU and GPU. The primary goal is to compare performance between basic CPU operations and optimized CPU operations (SIMD), as well as to compare performance between CPU and GPU implementations of basic neural network components.
 
@@ -21,5 +21,8 @@ This project implements:
 - `gpu_operations.h/cpp`: Wrapper for OpenCL operations
 - `benchmark.h/cpp`: Benchmarking utilities
 
+## Example Benchmarking
+
 <img width="365" alt="image" src="https://github.com/user-attachments/assets/cf55ade3-527b-4ef0-a7b9-ec15f60696d2">
 
+<img width="443" alt="image" src="https://github.com/user-attachments/assets/4b66aeec-13e5-471c-9c5a-2e4b40d0fd60">
