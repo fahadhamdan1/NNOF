@@ -33,8 +33,8 @@ void benchmark_fully_connected_layer(int input_size, int output_size, int batch_
 
     std::cout << "Fully Connected Layer Benchmark:" << std::endl;
     std::cout << "Input size: " << input_size << ", Output size: " << output_size << ", Batch size: " << batch_size << std::endl;
-    Benchmark::printResults("CPU Forward", cpu_result);
-    Benchmark::printResults("GPU Forward", gpu_result);
+    Benchmark::printResults("CPU Forward Pass", cpu_result);
+    Benchmark::printResults("GPU Forward Pass", gpu_result);
     std::cout << "GPU Speedup: " << cpu_result.latency / gpu_result.latency << "x" << std::endl;
     std::cout << std::endl;
 }
