@@ -8,7 +8,7 @@ This project implements:
 
 1. A Tensor class for handling multi-dimensional data
 2. CPU implementations of basic operations (addition, matrix multiplication)
-3. SIMD-optimized versions of these operations using AVX instructions
+3. SIMD-optimized versions of above operations using AVX instructions
 4. A FullyConnectedLayer class with both CPU and GPU forward pass, using OpenCL for GPU
 5. A benchmarking system to compare baseline and optimized CPU performance, and to compare CPU and GPU performance (Latency, Throughput, Memory Usage)
 
